@@ -1,0 +1,11 @@
+<div class="nested-fields">  
+  <div class="field">
+      <%= f.label :strain_id %>
+      <%= f.collection_select :strain_id, @strain, :id, :name %>
+  </div>
+  <div class="field">
+      <%= f.label :percentage %>
+      <%= f.number_field :percentage %>    
+  </div>
+  <%= link_to_remove_association "remove strain", f %>
+</div>
