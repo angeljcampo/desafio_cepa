@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Wines", type: :request do
   
-  describe 'You can"t view index without login' do
+  describe 'You can not access to index view without login' do
     it 'should redirect to sign_in view' do
       get :index
       expect(response).to_not render_template("index")
