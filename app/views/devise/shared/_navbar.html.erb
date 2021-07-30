@@ -6,9 +6,18 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto mr-5">
     <%  if signed_in?  %>
-        <li class="nav-item active">
+        <% if current_user.admin?  %>
+          <div class="btn btn-light mr-3">
+            <%= link_to "Create Wine", new_wine_path  %>
+          </div>
+          <div class="btn btn-light mr-3">
+            <%= link_to "Create Strain", new_strain_path  %>
+          </div>
+        <% end %>
+        <div class="btn btn-danger">
           <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "text-light" %>
-        </li>
+        </div>
+
       <% else %>
         <li class="nav-item mr-3">
           <%= link_to "Registrarse", new_user_registration_path,  class:"text-light" %>
